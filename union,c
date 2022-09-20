@@ -1,0 +1,64 @@
+
+
+#include <stdio.h>
+
+int main()
+{
+    int arr1[9] = {1,2,3,4,5,6,7,8,9},arr2[4] = {2,4,45,78},code[][] = {2,2,3,4,3,3,2,3,4,3};
+    int arr3[20]  = {},i = 0,j = 0,k = 0,count1 = 9,count2 = 4,count3 = 0;
+    
+    while(i!=count1 && j!=count2){
+        if(arr1[i] == arr2[j]){
+            arr3[count3] = arr1[i];
+            i++;
+            j++;
+            count3++;
+            
+        }
+        if (arr1[i]<arr2[j]){
+            arr3[count3] = arr1[i];
+            i++;
+            count3++;
+        }
+        if(arr2[j]<arr3[i]){
+            arr3[count3] = arr2[j];
+            j++;
+            count3++;
+        }
+        
+    }
+    
+    while(j<count2){
+        arr3[count3] = arr2[j];
+        count3++;
+        j++;
+    }
+    
+    
+    while(i<count1){
+        arr3[count3] = arr1[i];
+        i++;
+        count3++;
+    }
+    
+    for(k = 0;k<count3;k++){
+        printf("\t%d",arr3[k]);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
